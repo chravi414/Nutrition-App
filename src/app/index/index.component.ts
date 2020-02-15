@@ -11,6 +11,7 @@ export class IndexComponent implements OnInit {
   public searchTerm: string;
   public productData: any;
   public recommendedProds : any = [];
+  public searchTermError = false;
   constructor(private router:Router,private userService : UserDataService) { }
 
   ngOnInit() {
@@ -36,11 +37,21 @@ export class IndexComponent implements OnInit {
     });
   }
 
+
   getDetails() {
-    this.userService.getNutritionDetails(this.searchTerm).
+    if (!this.searchTerm) {
+      this.searchTermError = true;
+    } else {
+      this.userService.getNutritionDetails(this.searchTerm).
       subscribe(data => {
-        this.productData = data['hits'][0]['fields'];
-        console.log(this.productData);
+        if (data['total_hits'] > 0 ) {
+          this.productData = data['hits'][0]['fields'];
+        } else {
+          this.searchTermError = true;
+        }
       })
+      this.searchTermError = false;
+    }
+
   }
 }

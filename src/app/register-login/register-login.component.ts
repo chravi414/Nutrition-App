@@ -50,6 +50,8 @@ export class RegisterLoginComponent implements OnInit {
     if (this.validatePassword()) {
       this.passwordMatchError = false;
       this.userService.registerUser(this.regForm.value);
+      localStorage.setItem('isLogged', JSON.stringify(true));
+      this.router.navigate(['/index']);      
     } else {
       this.passwordMatchError = true;
     }
