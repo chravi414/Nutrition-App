@@ -1,0 +1,21 @@
+.container {
+    width:900px;
+    margin:0 auto;
+    background: #fff;
+    padding: 50px;
+}
+.main {
+    padding-top:100px;
+}
+.w-75 {
+    width: 50%;;
+}
+.glyphicon {
+    left: -25px;
+    top: 2px;
+}
+
+.text-danger {
+    margin-top: 10px;
+    margin-left: 5px;
+}

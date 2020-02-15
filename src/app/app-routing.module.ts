@@ -11,7 +11,12 @@ const routes: Routes = [
   {
     path: 'index',
     component: IndexComponent
-  }
+  },
+  {
+    path : '',
+    redirectTo : 'register',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

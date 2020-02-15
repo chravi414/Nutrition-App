@@ -1,3 +1,29 @@
+.main {
+    padding-top:100px;
+}
 .container {
-    margin: 0 auto;
+  background: #fff;
+  width: 900px;
+}
+.reg-form, .login-form {
+    padding: 50px;
+}
+.reg-image {
+    padding: 100px;
+}
+input {
+    width: 80%;
+    margin-left:10px;
+}
+.reg-title{
+    margin-bottom : 15px;
+}
+.login-link {
+    margin-bottom : 10px;
+}
+.text-danger {
+    padding-left: 20px;
+}
+.reg-btn, .login-btn {
+    width: 150px;
 }

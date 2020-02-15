@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserDataService {
-  public users = Array(JSON.parse(localStorage.getItem("users")));
+  public users = JSON.parse(localStorage.getItem("users")) ?
+             Array(JSON.parse(localStorage.getItem("users"))) : [];
   constructor(private http: HttpClient) { }
 
   registerUser(userData) {
