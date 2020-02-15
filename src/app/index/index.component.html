@@ -1,0 +1,27 @@
+<div class="container">
+  <h3>Know the Nutrition Details</h3>
+  <!-- Search form -->
+  <p class="pull-right">Click here to <a (click)="logout()">logout</a></p>
+  <form class="form-inline md-form form-sm active-cyan-2 mt-2">
+    <input class="form-control form-control-sm mr-3 w-75" type="text" name="searchTerm" [(ngModel)]="searchTerm"
+      placeholder="Search" aria-label="Search">
+    <i class="glyphicon glyphicon-search" (click)="getDetails()"></i>
+  </form>
+
+  <div class="results" *ngIf="productData">
+    <h4>Here are the results of search.</h4>
+    <p>Item Name : {{productData.item_name}}</p>
+    <p>Calories : {{productData.nf_calories}}</p>
+    <p>Protein : {{productData.nf_protein}}</p>
+    <p>Serving Weight : {{productData.nf_serving_weight_grams}}</p>
+  </div>
+  <h3>Recommendations</h3>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let prod of recommendedProds">
+      <h5 class="card-header">{{prod.item_name }}</h5>
+      <p>Calories : {{prod.nf_calories}}</p>
+      <p>Protein : {{prod.nf_protein}}</p>
+      <p>Serving Weight : {{prod.nf_serving_weight_grams}}</p>
+    </div>
+  </div>
+</div>
